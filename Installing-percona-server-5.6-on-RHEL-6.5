@@ -1,0 +1,21 @@
+#!/bin/bash
+
+yum update
+
+yum install http://www.percona.com/downloads/percona-release/percona-release-0.0-1.x86_64.rpm
+
+yum install Percona-Server-client-56 Percona-Server-server-56
+
+### start mysql
+
+service mysql start
+
+### change pass root
+mysql_secure_installation
+
+#Set root password? [Y/n] y
+#Remove anonymous users? [Y/n] y
+#Remove test database and access to it? [Y/n] n
+#Reload privilege tables now? [Y/n] y
+ ... Success!
+ 
